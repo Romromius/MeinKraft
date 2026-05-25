@@ -29,7 +29,23 @@ git fetch origin
 git checkout -b main origin/master
 
 echo.
-echo Success! Mods installed successfully.
-echo You can now delete this installer script.
+echo Success! Mods downloaded successfully.
+echo Now, installing...
 echo.
+
+echo Fetching latest updates from GitHub...
+git fetch --all
+
+echo Resetting local folder to match GitHub exactly...
+git reset --hard origin/master
+
+echo Cleaning up untracked files...
+git clean -fd
+
+echo Done! Your mods are updated.
+
+echo.
+echo All done!
+echo.
+
 pause
